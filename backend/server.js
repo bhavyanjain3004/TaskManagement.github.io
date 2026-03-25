@@ -15,8 +15,12 @@ app.use(express.json());
 // Database connection
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/task-tracker';
 mongoose.connect(MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+  .then(() => console.log('✅ MongoDB connected to:', MONGO_URI.split('@')[1] || 'local'))
+  .catch(err => {
+    console.error('❌ MongoDB connection error!');
+    console.error('Error name:', err.name);
+    console.error('Error message:', err.message);
+  });
 
 // Routes
 app.use('/api/auth', require('./routes/auth.routes'));
