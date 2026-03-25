@@ -148,8 +148,6 @@ const Aquarium = () => {
         >
           <option value="-createdAt">Newest</option>
           <option value="createdAt">Oldest</option>
-          <option value="priority">Priority Low-High</option>
-          <option value="-priority">Priority High-Low</option>
         </select>
 
         {/* Global Pagination Controls */}
