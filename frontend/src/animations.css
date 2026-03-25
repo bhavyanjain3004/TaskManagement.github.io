@@ -1,0 +1,106 @@
+/* Fish animations */
+@keyframes swim-right {
+  0% {
+    transform: translateX(-10vw) translateY(0) scaleX(-1);
+  }
+
+  25% {
+    transform: translateX(25vw) translateY(-20px) scaleX(-1);
+  }
+
+  50% {
+    transform: translateX(50vw) translateY(10px) scaleX(-1);
+  }
+
+  75% {
+    transform: translateX(75vw) translateY(-10px) scaleX(-1);
+  }
+
+  100% {
+    transform: translateX(110vw) translateY(0) scaleX(-1);
+  }
+}
+
+@keyframes swim-left {
+  0% {
+    transform: translateX(110vw) translateY(0);
+  }
+
+  25% {
+    transform: translateX(75vw) translateY(20px);
+  }
+
+  50% {
+    transform: translateX(50vw) translateY(-10px);
+  }
+
+  75% {
+    transform: translateX(25vw) translateY(10px);
+  }
+
+  100% {
+    transform: translateX(-10vw) translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Bubble effect */
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.fish-wrapper {
+  position: absolute;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.fish-wrapper.swim-left {
+  animation: swim-left 25s linear infinite;
+}
+
+.fish-wrapper.swim-right {
+  animation: swim-right 30s linear infinite;
+}
+
+.fish-wrapper:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+  z-index: 100;
+}
+
+/* The inner element floats up and down gently while the wrapper moves across the screen */
+.fish-inner {
+  animation: float 3s ease-in-out infinite;
+}
+
+.bubble {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('/bubble.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: bubble-rise 2s ease-in forwards;
+}
