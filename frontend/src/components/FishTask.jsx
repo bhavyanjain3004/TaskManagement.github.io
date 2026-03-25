@@ -114,7 +114,13 @@ const FishTask = ({ task, onClick, onComplete, onDelete }) => {
         <img
           src={getImage()}
           alt="Task Fish"
-          style={{ width: '150px', height: 'auto', display: 'block', pointerEvents: 'none' }}
+          style={{ 
+            width: '150px', 
+            height: 'auto', 
+            display: 'block', 
+            pointerEvents: 'none',
+            transform: direction === 'swim-right' ? 'scaleX(-1)' : 'none'
+          }}
           onError={(e) => {
             // Fallback if image isn't saved yet
             e.target.style.display = 'none';

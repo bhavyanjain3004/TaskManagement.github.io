@@ -1,23 +1,23 @@
 /* Fish animations */
 @keyframes swim-right {
   0% {
-    transform: translateX(-10vw) translateY(0) scaleX(-1);
+    transform: translateX(-10vw) translateY(0);
   }
 
   25% {
-    transform: translateX(25vw) translateY(-20px) scaleX(-1);
+    transform: translateX(25vw) translateY(-20px);
   }
 
   50% {
-    transform: translateX(50vw) translateY(10px) scaleX(-1);
+    transform: translateX(50vw) translateY(10px);
   }
 
   75% {
-    transform: translateX(75vw) translateY(-10px) scaleX(-1);
+    transform: translateX(75vw) translateY(-10px);
   }
 
   100% {
-    transform: translateX(110vw) translateY(0) scaleX(-1);
+    transform: translateX(110vw) translateY(0);
   }
 }
 
