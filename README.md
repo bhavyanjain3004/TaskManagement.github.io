@@ -28,6 +28,34 @@ The goal of this project was to build a robust task tracker with basic collabora
 
 ---
 
+## 📸 Visual Walkthrough
+
+### 1. Join the Ocean (Signup)
+![Signup Page](./screenshots/signup.png)
+*Start your productivity journey by creating a personalized aquarium account.*
+
+### 2. Secure Access (Login)
+![Login Page](./screenshots/login.png)
+*A premium, glassmorphism-styled portal to keep your tasks secure.*
+
+### 3. Your Personal Reservoir
+![Empty Aquarium](./screenshots/dashboard.png)
+*A clean, immersive space ready for your daily goals.*
+
+### 4. Tasks as Swimming Fish
+![Active Tasks](./screenshots/aquarium_fish.png)
+*Watch your tasks come to life! Different fish types and sizes represent task priorities and status.*
+
+### 5. Achieving Goals (Bubbles)
+![Completed Tasks](./screenshots/aquarium_bubbles.png)
+*When a task is done, it transforms into a floating bubble, providing satisfying visual feedback.*
+
+### 6. Data-Driven Insights
+![Analytics Dashboard](./screenshots/analytics.png)
+*Monitor your progress with a minimalist analytics dashboard and list view.*
+
+---
+
 ## 📦 Installation & Setup
 
 ### 1. Database Configuration
