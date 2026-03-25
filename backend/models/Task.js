@@ -30,4 +30,8 @@ const taskSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
+taskSchema.index({ userId: 1, status: 1 });
+taskSchema.index({ userId: 1, priority: 1 });
+taskSchema.index({ title: 'text' });
+
 module.exports = mongoose.model('Task', taskSchema);

@@ -5,18 +5,40 @@ exports.getTasks = async (req, res, next) => {
     const reqQuery = { ...req.query, userId: req.user.id };
     const removeFields = ['select', 'sort', 'page', 'limit', 'search'];
     removeFields.forEach(param => delete reqQuery[param]);
+
     if (req.query.search) {
       reqQuery.title = { $regex: req.query.search, $options: 'i' };
     }
+
     let query = Task.find(reqQuery);
+
     if (req.query.sort) {
       const sortBy = req.query.sort.split(',').join(' ');
       query = query.sort(sortBy);
     } else {
       query = query.sort('-createdAt');
     }
+
+    // Pagination
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 12; // 12 for aquarium grid feel
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+    const total = await Task.countDocuments(reqQuery);
+
+    query = query.skip(startIndex).limit(limit);
+
     const tasks = await query;
-    res.status(200).json({ success: true, count: tasks.length, data: tasks });
+
+    const pagination = {};
+    if (endIndex < total) {
+      pagination.next = { page: page + 1, limit };
+    }
+    if (startIndex > 0) {
+      pagination.prev = { page: page - 1, limit };
+    }
+
+    res.status(200).json({ success: true, count: tasks.length, total, pagination, data: tasks });
   } catch (err) {
     next(err);
   }
