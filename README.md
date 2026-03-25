@@ -94,5 +94,5 @@ We opted for a **Premium Glassmorphism** aesthetic (`backdrop-filter`) to mimic 
 ---
 
 ## 📄 License
-This project is for assignment purposes. Feel free to use it for learning and exploration!
+This project is for assignment purposes.
 
