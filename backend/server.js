@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Database connection
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/task-tracker';
-mongoose.connect(MONGO_URI)
+mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 5000 })
   .then(() => console.log('✅ MongoDB connected to:', MONGO_URI.split('@')[1] || 'local'))
   .catch(err => {
     console.error('❌ MongoDB connection error!');
