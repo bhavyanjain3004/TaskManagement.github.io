@@ -20,13 +20,18 @@ mongoose.connect(MONGO_URI)
 
 // Routes
 app.use('/api/auth', require('./routes/auth.routes'));
+app.use('/api/tasks', require('./routes/task.routes'));
+
 // Serve frontend
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-  app.get('(.*)', (req, res) =>
-    res.sendFile(path.resolve(__dirname, '../', 'frontend', 'dist', 'index.html'))
-  );
+  // SPA fallback
+  app.use((req, res, next) => {
+    // If it's an API request that didn't match, let it move to error handler
+    if (req.url.startsWith('/api')) return next();
+    res.sendFile(path.resolve(__dirname, '../', 'frontend', 'dist', 'index.html'));
+  });
 } else {
   app.get('/', (req, res) => res.send('API is running...'));
 }
