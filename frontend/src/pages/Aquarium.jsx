@@ -179,9 +179,11 @@ const Aquarium = () => {
             <p>Try clearing your filters or adding a new task!</p>
           </div>
         ) : (
-          tasks.map(task => (
+          tasks.map((task, index) => (
             <FishTask
               key={task._id}
+              index={index}
+              total={tasks.length}
               task={task}
               onClick={handleFishClick}
               onComplete={handleCompleteTask}

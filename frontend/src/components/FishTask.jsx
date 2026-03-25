@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
-const FishTask = ({ task, onClick, onComplete, onDelete }) => {
+const FishTask = ({ task, index, total, onClick, onComplete, onDelete }) => {
   const [isBubbling, setIsBubbling] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const [direction, setDirection] = useState('swim-right');
 
   useEffect(() => {
-    const initialTop = Math.random() * 60 + 20;
+    // Calculate lane-based top position to prevent overlapping
+    // Middle 60% of screen (20% to 80%) divided by total tasks
+    const laneHeight = 60 / (total || 1);
+    const initialTop = 20 + (index * laneHeight) + (Math.random() * 5); 
+    
     const initialLeft = Math.random() * 80 + 10;
     const dir = Math.random() > 0.5 ? 'swim-right' : 'swim-left';
     setPosition({ top: initialTop, left: initialLeft });
     setDirection(dir);
-  }, []);
+  }, [index, total]);
 
   // Determine size and color based on priority
   const getSize = () => {
