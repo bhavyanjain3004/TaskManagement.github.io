@@ -6,20 +6,6 @@ A full-stack (MERN) Task Management Web Application built as a mini-project assi
 
 ---
 
-## 🚀 Project Objective
-The goal of this project was to build a robust task tracker with basic collaboration and analytics, while focusing on premium UI/UX and modern technical architecture.
-
-### Key Requirements Fulfilled:
-- [x] **Authentication**: Secure JWT-based signup and login system.
-- [x] **Task Management**: Full CRUD operations for tasks with Title, Description, Status, and Priority.
-- [x] **Gamified UI**: Visual representation of tasks as interactive swimming fish and bubbles.
-- [x] **Premium Aesthetics**: Modern "Glassmorphism" design with 60FPS CSS animations.
-- [x] **Advanced Controls**: Real-time Search, Status/Priority Filtering, and Sorting.
-- [x] **Scalability**: Integrated Pagination for handling large task lists.
-- [x] **Analytics**: Dashboard providing insights into task completion and distribution.
-
----
-
 ## 🛠️ Tech Stack
 - **Frontend**: React.js (Vite), Axios, React Router, Vanilla CSS (Glassmorphism).
 - **Backend**: Node.js, Express.js (v5), JWT Authentication.
