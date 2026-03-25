@@ -98,12 +98,12 @@ A full-stack (MERN) Task Management Web Application built as a mini-project assi
 Traditional task managers are often stressful and cluttered. By using an **Aquarium metaphor**, we've transformed "to-dos" into living elements. This gamification makes completing a task (turning a fish into a bubble) feel rewarding rather than just checking a box.
 
 ### 2. Glassmorphism Design System
-We opted for a **Premium Glassmorphism** aesthetic (`backdrop-filter`) to mimic the look of an actual high-end glass aquarium. This gives the application a depth and translucency that feels more immersive than a flat UI.
+I opted for a **Premium Glassmorphism** aesthetic (`backdrop-filter`) to mimic the look of an actual high-end glass aquarium. This gives the application a depth and translucency that feels more immersive than a flat UI.
 
 ### 3. Technical Choices
-- **Express 5**: We chose the latest Express 5 for improved performance and modern Error Handling, despite it requiring a different approach to wildcard routing for our SPA.
+- **Express 5**: I chose the latest Express 5 for improved performance and modern Error Handling, despite it requiring a different approach to wildcard routing for SPA.
 - **Monorepo Strategy**: Using a root `package.json` simplified our CI/CD pipeline on Render, allowing us to manage two separate codebases as a single deployable unit.
-- **MongoDB Indexing**: We strategically added compound indexes on `userId` + `status` to ensure our "aquarium" remains fast even with thousands of fish.
+- **MongoDB Indexing**: I strategically added compound indexes on `userId` + `status` to ensure our "aquarium" remains fast even with thousands of fish.
 
 ---
 
